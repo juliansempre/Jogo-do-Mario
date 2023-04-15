@@ -176,6 +176,7 @@ const loop = setInterval(() => {
         location.reload();
     }
     setTimeout(() => {
+        document.addEventListener('click', reiniciar);
         document.addEventListener('keydown', reiniciar); 
     }, 1000);
 
@@ -184,4 +185,5 @@ const loop = setInterval(() => {
 
    } 
 }, 10);
+document.addEventListener('click', pulando);
 document.addEventListener('keydown', pulando);

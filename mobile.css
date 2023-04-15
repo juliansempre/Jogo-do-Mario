@@ -1,0 +1,15 @@
+@media only screen and (max-width: 412px){
+    /* forçar orientação landscape */
+body{
+    transform: scale(0.2);
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 490%;
+    height: 100vh;
+    position: absolute;
+    top: 220%;
+    left: 0;
+    overflow: hidden;
+    background-color: black;
+}
+}
