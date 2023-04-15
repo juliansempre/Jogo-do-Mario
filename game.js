@@ -62,50 +62,48 @@ pontos.innerHTML = pontuar;
 
 //Level
 
-let nivel = 1;
+var contador = 1.5;
+    setInterval(function() {
+      contador -= 0.01;
+      cano.style.animation = `canoanime ${contador}s linear infinite`;
+}, 999);
 
-// while(nivel<3){
-				
-//     nivel++;
-//     cano.style.animation = `canoanime ${nivel}s linear infinite`;
-// }
-
-cano.style.animation = `canoanime ${nivel}s linear infinite`;
+    cano.style.animation = `canoanime ${1.5}s linear infinite`;
 
 setInterval(() => {
-if(pontuar >= 200){
+if(pontuar >= 1000){
     levelcoletado.innerHTML = 'Level 1';  
     clearInterval(); 
 }
 }, 100); 
 setInterval(() => {
-    if(pontuar >= 400){
+    if(pontuar >= 2000){
         levelcoletado.innerHTML = 'Level 2';  
         game.style.background = 'linear-gradient(#FFA500, #ffffff)'
          
 }
 }, 100);
 setInterval(() => {
-    if(pontuar >= 600){
+    if(pontuar >= 3000){
         levelcoletado.innerHTML = 'Level 3'; 
         game.style.background = 'linear-gradient(#00003c, #ffffff)';
 }
 }, 100);
 setInterval(() => {
-    if(pontuar >= 700){
+    if(pontuar >= 4000){
         levelcoletado.innerHTML = 'Level 4'; 
         game.style.background = 'linear-gradient(#73b4ff, #ffffff)';
           
 }
 }, 100);
 setInterval(() => {
-    if(pontuar >= 800){
+    if(pontuar >= 5000){
         levelcoletado.innerHTML = 'Level 5';  
         game.style.background = 'linear-gradient(#FFA500, #ffffff)';
 }
 }, 100);
 setInterval(() => {
-    if(pontuar >= 1000){
+    if(pontuar >= 6000){
         levelcoletado.innerHTML = 'Incrível!';  
         game.style.background = 'linear-gradient(#00003c, #ffffff)';  
 }
@@ -128,10 +126,13 @@ const loop = setInterval(() => {
    if(canoPosicao <= 240 && canoPosicao > 0  && bonecoPosicao < 180){
    
     sounds.caiusom.play();
-    
-        sounds.musica.pause();
-        sounds.pulandosom.pause();
-        sounds.musica.currentTime = 0;
+
+   setInterval(() => {
+    sounds.musica.pause();
+    sounds.pulandosom.pause();
+    sounds.musica.currentTime = 0; 
+   }, 10); 
+
         setTimeout(() => {
             sounds.gameoversom.play();
         }, 3000);
